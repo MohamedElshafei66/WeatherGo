@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "20585779352",
+    "project_id": "weather-go-1c7f3",
+    "storage_bucket": "weather-go-1c7f3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20585779352:android:c122319890d1791b4e40ed",
+        "android_client_info": {
+          "package_name": "com.example.weather_go"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ6veP1QHoIQy3mIhQwu5ousmPYlzgY_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
