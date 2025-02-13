@@ -18,7 +18,7 @@ class SignupProvider extends ChangeNotifier {
   Future<void> signup(BuildContext context, String email, String password) async {
     _setLoading(true);
     try {
-      await signupUseCase(email, password);
+      await signupUseCase(context,email, password);
       Navigator.pushReplacementNamed(context,AppRoute.logIn);
     } catch (e) {
       print(e);

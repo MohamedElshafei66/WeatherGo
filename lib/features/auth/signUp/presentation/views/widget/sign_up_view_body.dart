@@ -59,7 +59,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   Icons.email
               ),
               validator:(text){
-                return validatorForEmail(text, maxVal: 20, minVal: 5);
+                return validatorForEmail(text, maxVal: 30, minVal: 5);
               },
             ),
           ),

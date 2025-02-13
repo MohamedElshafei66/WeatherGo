@@ -30,4 +30,6 @@ class AppStrings {
   static const String pleaseReEnterPassword     = 'Please, Re-Enter Password';
   static const String passwordNotMatched        = 'Password not matched!';
   static const String getStarted                = "Get Started";
+  static const String accountExistMessage       = 'The account already exists for that email.';
+  static const String noteText                 = "Note!" ;
 }
