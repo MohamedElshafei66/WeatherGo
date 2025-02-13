@@ -1,6 +1,6 @@
-# Project Name
+# Weather Go
 
-This project implements authentication using Firebase, allowing users to sign up and log in securely.
+The project helps users check the weather conditions of a specific location before traveling there. This allows them to decide whether the weather is suitable for their visit.
 
 ---
 
