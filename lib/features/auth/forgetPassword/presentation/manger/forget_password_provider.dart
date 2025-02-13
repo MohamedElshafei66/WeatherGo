@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../../../core/component/awesom_dialog.dart';
+import '../../../../../core/utils/app_string.dart';
 import '../../domain/usecases/forget_password_usecase.dart';
 
 class ForgetPasswordProvider extends ChangeNotifier {
@@ -17,13 +19,19 @@ class ForgetPasswordProvider extends ChangeNotifier {
   Future<void> resetPassword(BuildContext context, String email) async {
     _setLoading(true);
     try {
-      await forgetPasswordUseCase(email);
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Password reset email sent!")),
+      await forgetPasswordUseCase(context,email);
+      showAwesomeDialog(
+          // ignore: use_build_context_synchronously
+          context,
+          title:AppStrings.noteText,
+          des:AppStrings.checkYourBoxMessage
       );
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(e.toString())),
+      showAwesomeDialog(
+          // ignore: use_build_context_synchronously
+          context,
+          title:AppStrings.errorText,
+          des:AppStrings.errorText
       );
     } finally {
       _setLoading(false);

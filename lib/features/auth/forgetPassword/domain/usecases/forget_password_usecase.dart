@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import '../repositories/forget_password_repository.dart';
 
 class ForgetPasswordUseCase {
@@ -5,7 +6,7 @@ class ForgetPasswordUseCase {
 
   ForgetPasswordUseCase(this.repository);
 
-  Future<void> call(String email) {
-    return repository.resetPassword(email);
+  Future<void> call(BuildContext context,String email) {
+    return repository.resetPassword(context,email);
   }
 }

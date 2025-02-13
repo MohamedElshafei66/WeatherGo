@@ -33,6 +33,7 @@ class AppStrings {
   static const String accountExistMessage       = 'The account already exists for that email.';
   static const String userNotFountMessage       = 'No user found for that email.';
   static const String wrongPasswordMessage      = 'Wrong password provided for that user.';
+  static const String checkYourBoxMessage       = "Check your email to reset your password!";
   static const String noteText                  = "Note!" ;
   static const String errorText                 = "Error!";
 }

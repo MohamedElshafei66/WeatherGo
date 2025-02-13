@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:weather_go/core/utils/app_color.dart';
 import 'package:weather_go/core/utils/app_route.dart';
 import 'package:weather_go/core/widgets/custom_button.dart';
-import 'package:weather_go/core/widgets/custom_have_account_row.dart';
 import '../../../../../../core/helper/vaildator.dart';
 import '../../../../../../core/utils/app_string.dart';
+import '../../../../../../core/widgets/custom_have_account_row.dart';
 import '../../../../../../core/widgets/custom_text_feild.dart';
 import '../../../../login/presentation/views/widget/login_view_header.dart';
 import 'package:provider/provider.dart';
@@ -39,7 +39,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
               hintText:AppStrings.email,
               controller:emailController,
               validator:(text){
-                return validatorForEmail(text, maxVal: 20, minVal: 5);
+                return validatorForEmail(text, maxVal: 30, minVal: 5);
               },
               perfixIcon:const Icon(
                   Icons.email

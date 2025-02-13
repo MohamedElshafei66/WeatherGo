@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 abstract class ForgetPasswordRepository {
-  Future<void> resetPassword(String email);
+  Future<void> resetPassword(BuildContext context,String email);
 }
