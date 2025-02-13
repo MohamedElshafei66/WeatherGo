@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_go/core/utils/app_color.dart';
 import 'package:weather_go/core/utils/app_route.dart';
 import 'package:weather_go/core/utils/app_string.dart';
 import 'package:weather_go/core/widgets/custom_button.dart';
@@ -6,6 +7,8 @@ import 'package:weather_go/core/widgets/custom_have_account_row.dart';
 import 'package:weather_go/core/widgets/custom_text_feild.dart';
 import 'package:weather_go/features/auth/forgetPassword/presentation/views/widget/custom_forget_password_widget.dart';
 import 'package:weather_go/features/auth/login/presentation/views/widget/login_view_header.dart';
+import 'package:provider/provider.dart';
+import '../../manger/provider.dart';
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
 
@@ -18,6 +21,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final loginProvider = Provider.of<LoginProvider>(context);
     return Column(
       children:[
         const LoginViewHeader(
@@ -55,10 +59,16 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         const SizedBox(
           height:20,
         ),
-        SizedBox(
+        loginProvider.isLoading?
+        const CircularProgressIndicator(
+          color:AppColors.primaryColor,
+        )
+       : SizedBox(
           width:MediaQuery.of(context).size.width * 0.9,
           child: CustomButton(
-              onPressed:(){},
+              onPressed:(){
+                loginProvider.login(context, emailController.text, passwordController.text);
+              },
               text:AppStrings.login
           ),
         ),
