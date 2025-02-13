@@ -9,7 +9,8 @@ class CustomeTextField extends StatefulWidget {
         required this.controller,
         this.perfixIcon,
         this.suffixIcon,
-        this.isPassword = false
+        this.isPassword = false,
+        required this.validator
       });
 
   final String hintText;
@@ -17,6 +18,7 @@ class CustomeTextField extends StatefulWidget {
   final Widget? suffixIcon;
   final bool isPassword;
   final TextEditingController controller;
+  final String? Function(String?)? validator;
 
   @override
   State<CustomeTextField> createState() => _CustomeTextFieldState();
@@ -32,6 +34,7 @@ class _CustomeTextFieldState extends State<CustomeTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator:widget.validator,
       controller:widget.controller,
       obscureText: widget.isPassword ? obscureText : false,
       cursorColor:AppColors.darkestBlue,
