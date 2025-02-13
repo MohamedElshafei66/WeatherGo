@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:weather_go/core/utils/app_color.dart';
 import 'package:weather_go/core/utils/app_route.dart';
 import 'package:weather_go/core/widgets/custom_button.dart';
 import 'package:weather_go/core/widgets/custom_have_account_row.dart';
 import '../../../../../../core/utils/app_string.dart';
 import '../../../../../../core/widgets/custom_text_feild.dart';
 import '../../../../login/presentation/views/widget/login_view_header.dart';
+import 'package:provider/provider.dart';
+import '../../manger/forget_password_provider.dart';
 class ForgetPasswordViewBody extends StatefulWidget {
   const ForgetPasswordViewBody({super.key});
 
@@ -16,6 +19,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
   TextEditingController emailController    = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final forgetProvider = Provider.of<ForgetPasswordProvider>(context);
     return Column(
       children:[
          const LoginViewHeader(
@@ -38,8 +42,14 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
          const SizedBox(
           height:20,
         ),
-         CustomButton(
-             onPressed:(){},
+        forgetProvider.isLoading ?
+        const CircularProgressIndicator(
+          color:AppColors.primaryColor,
+        )
+         :CustomButton(
+             onPressed:(){
+               forgetProvider.resetPassword(context, emailController.text);
+             },
              text:AppStrings.reset
          ),
          const SizedBox(

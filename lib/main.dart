@@ -1,5 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_go/features/auth/forgetPassword/data/repositories/forget_password_repository_impl.dart';
+import 'package:weather_go/features/auth/forgetPassword/domain/repositories/forget_password_repository.dart';
+import 'package:weather_go/features/auth/forgetPassword/domain/usecases/forget_password_usecase.dart';
+import 'package:weather_go/features/auth/forgetPassword/presentation/manger/forget_password_provider.dart';
 import 'package:weather_go/features/auth/login/presentation/manger/provider.dart';
 import 'package:weather_go/features/auth/signUp/presentation/manger/provider.dart';
 import 'package:weather_go/my_app.dart';
@@ -23,6 +27,9 @@ void main()async{
   final LoginUseCase loginUseCase = LoginUseCase(loginRepository);
   final SignupRepository signupRepository = SignupRepositoryImpl(firebaseAuth);
   final SignupUseCase signupUseCase = SignupUseCase(signupRepository);
+  final ForgetPasswordRepository forgetPasswordRepository = ForgetPasswordRepositoryImpl(firebaseAuth);
+  final ForgetPasswordUseCase forgetPasswordUseCase = ForgetPasswordUseCase(forgetPasswordRepository);
+  
   runApp(
       MultiProvider(
         providers:[
@@ -31,6 +38,9 @@ void main()async{
           ),
           ChangeNotifierProvider(
             create:(context) => SignupProvider(signupUseCase)
+          ),
+          ChangeNotifierProvider(
+            create:(context)=>ForgetPasswordProvider(forgetPasswordUseCase),
           )
         ],
         child:const WeatherGo(),
