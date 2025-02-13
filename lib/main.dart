@@ -34,12 +34,3 @@ void main()async{
   );
 
 }
-
-
-/*void main()async{
-  runApp(const WeatherGo());
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options:DefaultFirebaseOptions.currentPlatform
-  );
-}*/
