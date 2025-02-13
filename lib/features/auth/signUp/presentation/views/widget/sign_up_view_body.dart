@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:weather_go/core/utils/app_color.dart';
 import '../../../../../../core/utils/app_route.dart';
 import '../../../../../../core/utils/app_string.dart';
 import '../../../../../../core/widgets/custom_button.dart';
 import '../../../../../../core/widgets/custom_have_account_row.dart';
 import '../../../../../../core/widgets/custom_text_feild.dart';
 import '../../../../login/presentation/views/widget/login_view_header.dart';
+import 'package:provider/provider.dart';
+import '../../manger/provider.dart';
 class SignUpViewBody extends StatefulWidget {
   const SignUpViewBody({super.key});
   @override
@@ -17,6 +20,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final signupProvider = Provider.of<SignupProvider>(context);
     return Column(
       children:[
         const LoginViewHeader(
@@ -63,10 +67,19 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
         const SizedBox(
           height:20,
         ),
-        SizedBox(
+        signupProvider.isLoading?
+        const CircularProgressIndicator(
+          color:AppColors.primaryColor,
+        )
+       : SizedBox(
           width:MediaQuery.of(context).size.width * 0.9,
           child: CustomButton(
-              onPressed:(){},
+              onPressed:(){
+                signupProvider.signup(context,
+                    emailController.text,
+                    passwordController.text
+                );
+              },
               text:AppStrings.register
           ),
         ),
