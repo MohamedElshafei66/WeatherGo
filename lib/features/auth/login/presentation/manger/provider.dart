@@ -18,7 +18,7 @@ class LoginProvider extends ChangeNotifier {
   Future<void> login(BuildContext context, String email, String password) async {
     _setLoading(true);
     try {
-      await loginUseCase(email, password);
+      await loginUseCase(context,email, password);
       Navigator.pushNamed(context,AppRoute.home);
     } catch (e) {
       print(e);

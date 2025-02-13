@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import '../repositories/login_repository.dart';
 
 class LoginUseCase {
@@ -5,7 +6,7 @@ class LoginUseCase {
 
   LoginUseCase(this.repository);
 
-  Future<void> call(String email, String password) {
-    return repository.login(email, password);
+  Future<void> call(BuildContext context,String email, String password) {
+    return repository.login(context,email, password);
   }
 }

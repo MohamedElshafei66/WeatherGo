@@ -31,5 +31,8 @@ class AppStrings {
   static const String passwordNotMatched        = 'Password not matched!';
   static const String getStarted                = "Get Started";
   static const String accountExistMessage       = 'The account already exists for that email.';
-  static const String noteText                 = "Note!" ;
+  static const String userNotFountMessage       = 'No user found for that email.';
+  static const String wrongPasswordMessage      = 'Wrong password provided for that user.';
+  static const String noteText                  = "Note!" ;
+  static const String errorText                 = "Error!";
 }
