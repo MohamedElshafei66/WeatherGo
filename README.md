@@ -1,16 +1,31 @@
-# weather_go
+# Weather Go
 
-A new Flutter project.
+The project helps users check the weather conditions of a specific location before traveling there. This allows them to decide whether the weather is suitable for their visit.
+
+---
+
+## Features
+
+- **Authentication**:
+  - User registration with Firebase.
+  - Secure login and authentication management.
+
+---
+
+## Video Demo
+
+Check out the demo video of Auth feature with Firbase: [Video Link](https://drive.google.com/file/d/1zi63ucK6gCMDNaAW9r6_2klL0D-7LeFt/view?usp=drive_link)
+
+---
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Follow these steps to set up and run the app:
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Ensure you have the following installed:
+- [Flutter SDK](https://flutter.dev/docs/get-started/install)
+- **Dart SDK** (included with Flutter)
+- [Android Studio](https://developer.android.com/studio) or [Visual Studio Code](https://code.visualstudio.com/)
+- A physical or virtual device (Android Emulator or iOS Simulator).
