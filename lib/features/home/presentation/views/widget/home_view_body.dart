@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'day_list_item.dart';
+import 'day_list_view_item.dart';
 import 'user_name_section.dart';
 import 'weather_details_section.dart';
 class HomeViewBody extends StatelessWidget {
@@ -18,7 +18,10 @@ class HomeViewBody extends StatelessWidget {
           Divider(
             thickness:0.2,
           ),
-          DayListItem()
+          SizedBox(
+            height:20,
+          ),
+          DayListViewItem()
 
         ],
       ),
