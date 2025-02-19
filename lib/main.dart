@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_go/features/auth/forgetPassword/presentation/manger/forget_password_provider.dart';
-import 'package:weather_go/features/auth/login/presentation/manger/provider.dart';
-import 'package:weather_go/features/auth/signUp/presentation/manger/provider.dart';
 import 'package:weather_go/my_app.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'core/helper/initil_repositories.dart';
 import 'core/manger/user_provider.dart';
+import 'features/auth/forgetPassword/presentation/manger/forget_password_provider.dart';
+import 'features/auth/login/presentation/manger/provider.dart';
+import 'features/auth/signUp/presentation/manger/provider.dart';
 import 'firebase_options.dart';
 import 'package:provider/provider.dart';
 
@@ -35,7 +35,7 @@ void main()async{
             create:(context)=>userProvider
           )
         ],
-        child:const WeatherGo(),
+       child:const WeatherGo(),
       )
   );
 

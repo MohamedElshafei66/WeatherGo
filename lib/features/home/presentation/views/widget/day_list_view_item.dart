@@ -5,6 +5,7 @@ class DayListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+    double width  = MediaQuery.of(context).size.width;
     return SizedBox(
       height:height * 0.18,
       child: GestureDetector(
@@ -13,9 +14,9 @@ class DayListViewItem extends StatelessWidget {
           scrollDirection:Axis.horizontal,
           itemCount:3,
           itemBuilder:(context,i){
-            return const Padding(
-              padding:EdgeInsets.symmetric(horizontal:25),
-              child:DayListItem(),
+            return  Padding(
+              padding:EdgeInsets.symmetric(horizontal:width * 0.06),
+              child:const DayListItem(),
             );
           },
         ),
