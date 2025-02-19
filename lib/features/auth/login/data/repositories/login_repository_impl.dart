@@ -18,6 +18,7 @@ class LoginRepositoryImpl implements LoginRepository {
         password: password,
       );
 
+
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         showAwesomeDialog(

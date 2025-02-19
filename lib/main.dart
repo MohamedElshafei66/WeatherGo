@@ -6,11 +6,14 @@ import 'package:weather_go/features/auth/signUp/presentation/manger/provider.dar
 import 'package:weather_go/my_app.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'core/helper/initil_repositories.dart';
+import 'core/manger/user_provider.dart';
 import 'firebase_options.dart';
 import 'package:provider/provider.dart';
 
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
+  final userProvider = UserProvider();
+  await userProvider.loadUsername();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -27,6 +30,9 @@ void main()async{
           ),
           ChangeNotifierProvider(
             create:(context)=>ForgetPasswordProvider(repositories.forgetPasswordUseCase),
+          ),
+          ChangeNotifierProvider(
+            create:(context)=>userProvider
           )
         ],
         child:const WeatherGo(),

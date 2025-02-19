@@ -90,8 +90,9 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 onPressed:(){
                   if(formState.currentState!.validate()){
                     signupProvider.signup(context,
+                        nameController.text,
                         emailController.text,
-                        passwordController.text
+                        passwordController.text,
                     );
                   }
                 },

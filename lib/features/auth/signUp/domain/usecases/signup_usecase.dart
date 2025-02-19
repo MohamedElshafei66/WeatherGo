@@ -6,7 +6,7 @@ class SignupUseCase {
 
   SignupUseCase(this.repository);
 
-  Future<void> call(BuildContext context,String email, String password) {
-    return repository.signup(context,email, password);
+  Future<void> call(BuildContext context,String username,String email, String password) {
+    return repository.signup(context,username,email, password);
   }
 }

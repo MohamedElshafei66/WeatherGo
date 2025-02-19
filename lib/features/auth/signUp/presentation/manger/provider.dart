@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:weather_go/core/utils/app_route.dart';
+import '../../../../../core/manger/user_provider.dart';
 import '../../domain/usecases/signup_usecase.dart';
 
 class SignupProvider extends ChangeNotifier {
@@ -15,10 +17,11 @@ class SignupProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> signup(BuildContext context, String email, String password) async {
+  Future<void> signup(BuildContext context,String username,String email, String password) async {
     _setLoading(true);
     try {
-      await signupUseCase(context,email, password);
+      await signupUseCase(context,username,email, password);
+      Provider.of<UserProvider>(context, listen: false).setUsername(username);
       Navigator.pushReplacementNamed(context,AppRoute.logIn);
     } catch (e) {
       print(e);
