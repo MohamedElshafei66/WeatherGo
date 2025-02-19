@@ -36,4 +36,6 @@ class AppStrings {
   static const String checkYourBoxMessage       = "Check your email to reset your password!";
   static const String noteText                  = "Note!" ;
   static const String errorText                 = "Error!";
+  static const String welcomeText               = "Welcome";
+  static const String logOutHint              = "Are you sure that you want to log out?";
 }

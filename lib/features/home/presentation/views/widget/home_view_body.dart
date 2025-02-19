@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../../../../../core/manger/user_provider.dart';
+import 'package:weather_go/features/home/presentation/views/widget/user_name_section.dart';
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
   @override
   Widget build(BuildContext context) {
-    final userProvider = Provider.of<UserProvider>(context);
-    return  SizedBox(
-      width:double.infinity,
-      child:Center(
-        child:Text("${userProvider.username}"),
+    return const Padding(
+      padding:EdgeInsets.symmetric(horizontal:16,vertical:10),
+      child: Column(
+        crossAxisAlignment:CrossAxisAlignment.start,
+        children:[
+          UserNameSection()
+        ],
       ),
     );
   }
