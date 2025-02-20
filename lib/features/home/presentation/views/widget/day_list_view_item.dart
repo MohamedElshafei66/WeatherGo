@@ -19,7 +19,7 @@ class DayListViewItem extends StatelessWidget {
           return Padding(
             padding: EdgeInsets.symmetric(horizontal: width * 0.06),
             child: DayListItem(
-              day: "${dayData.humidity}%",
+              humidity: "${dayData.humidity}%",
               icon: dayData.icon,
               temperature: dayData.temperature,
               index:i,

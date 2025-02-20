@@ -6,12 +6,12 @@ import '../../manger/home_provider.dart';
 
 class DayListItem extends StatelessWidget {
   const DayListItem({super.key,
-    required this.day,
+    required this.humidity,
     required this.icon,
     required this.temperature,
     required this.index,
   });
-  final String day;
+  final String humidity;
   final String icon;
   final double temperature;
   final int index;
@@ -49,7 +49,7 @@ class DayListItem extends StatelessWidget {
             ),
             FittedBox(
               child: Text(
-               day,
+                humidity,
                 style:AppStyle.semiBold20(context).copyWith(
                   color:AppColors.darkestBlue,
                   fontSize:20
