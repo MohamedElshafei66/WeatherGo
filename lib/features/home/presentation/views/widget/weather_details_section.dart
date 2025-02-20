@@ -1,25 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../../../../core/utils/app_color.dart';
 import '../../../../../core/utils/app_image.dart';
 import '../../../../../core/utils/app_style.dart';
+import '../../manger/home_provider.dart';
 class WeatherDetailsSection extends StatelessWidget {
-  const WeatherDetailsSection({super.key});
+  const WeatherDetailsSection({super.key,});
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    final homeProvider = Provider.of<HomeProvider>(context);
     return Column(
       children:[
         Center(
-          child: Image.asset(
-            AppImage.test2Image,
-            width:width * 0.65,
+          child: Image.network(
+            "https://openweathermap.org/img/wn/${homeProvider.weather?.icon}@4x.png",
           ),
         ),
         Center(
           child: Text(
-            "21°",
+        "${homeProvider.weather?.temperature.toStringAsFixed(0) ?? "--"}°",
             style:AppStyle.semiBold35(context).copyWith(
                 fontSize:70
+            ),
+          ),
+        ),
+        Center(
+          child: Text(
+          homeProvider.weather?.description ?? "--",
+            style:AppStyle.semiBold35(context).copyWith(
+                fontSize:25,
+                fontWeight:FontWeight.w500
             ),
           ),
         ),
@@ -39,13 +50,16 @@ class WeatherDetailsSection extends StatelessWidget {
                   height:15,
                 ),
                 Text(
-                  "2%",
+                  "${homeProvider.weather?.cloudiness ?? "--"}%",
                   style:AppStyle.medium18(context).copyWith(
                       fontSize:25,
                       color:AppColors.whiteColor
                   ),
                 )
               ],
+            ),
+            const SizedBox(
+              width:3,
             ),
             Column(
               children:[
@@ -57,7 +71,7 @@ class WeatherDetailsSection extends StatelessWidget {
                   height:15,
                 ),
                 Text(
-                  "31%",
+                  "${homeProvider.weather?.humidity ?? "--"}%",
                   style:AppStyle.medium18(context).copyWith(
                       fontSize:25,
                       color:AppColors.whiteColor
@@ -75,7 +89,7 @@ class WeatherDetailsSection extends StatelessWidget {
                   height:3,
                 ),
                 Text(
-                  "6km/h",
+                  "${homeProvider.weather?.windSpeed ?? "--"} km/h",
                   style:AppStyle.medium18(context).copyWith(
                       fontSize:22,
                       color:AppColors.whiteColor

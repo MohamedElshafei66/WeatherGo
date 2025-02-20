@@ -7,6 +7,7 @@ import 'core/manger/user_provider.dart';
 import 'features/auth/forgetPassword/presentation/manger/forget_password_provider.dart';
 import 'features/auth/login/presentation/manger/provider.dart';
 import 'features/auth/signUp/presentation/manger/provider.dart';
+import 'features/home/presentation/manger/home_provider.dart';
 import 'firebase_options.dart';
 import 'package:provider/provider.dart';
 
@@ -33,7 +34,10 @@ void main()async{
           ),
           ChangeNotifierProvider(
             create:(context)=>userProvider
-          )
+          ),
+          ChangeNotifierProvider(
+            create:(context) => HomeProvider(getWeatherUseCase:repositories.getWeatherUseCase),
+          ),
         ],
        child:const WeatherGo(),
       )
