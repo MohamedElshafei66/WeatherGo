@@ -37,5 +37,8 @@ class AppStrings {
   static const String noteText                  = "Note!" ;
   static const String errorText                 = "Error!";
   static const String welcomeText               = "Welcome";
-  static const String logOutHint              = "Are you sure that you want to log out?";
+  static const String logOutHint                = "Are you sure that you want to log out?";
+  static const String goodWeatherMessage        = "You can go out.Weather is good!Have fun and be happy!";
+  static const String badWeatherMessage         = "You can't go out.Weather is bad!Please stay in your home to be safe.";
+
 }

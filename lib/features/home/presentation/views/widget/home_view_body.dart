@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weather_go/core/utils/app_color.dart';
-import 'package:weather_go/features/home/presentation/views/widget/user_name_section.dart';
-import 'package:weather_go/features/home/presentation/views/widget/weather_details_section.dart';
 import '../../manger/home_provider.dart';
 import 'day_list_view_item.dart';
+import 'user_name_section.dart';
+import 'weather_details_section.dart';
+import 'weather_pediction_button.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -31,7 +32,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           ));
         }
         else {
-          return const CustomScrollView(
+          return const  CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
                 child: Padding(
@@ -50,6 +51,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                           height: 20
                       ),
                       DayListViewItem(),
+                      SizedBox(
+                        height:10,
+                      ),
+                      WeatherPredictionButton()
                     ],
                   ),
                 ),

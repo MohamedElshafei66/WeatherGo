@@ -3,11 +3,13 @@ import 'package:geolocator/geolocator.dart';
 // ignore: depend_on_referenced_packages
 import 'package:intl/intl.dart';
 import '../../../../core/servises/location_servises.dart';
+import '../../data/sources/weather_prediction_remote_data_source.dart';
 import '../../domain/entities/weather.dart';
 import '../../domain/usecases/weather_use_case.dart';
 
 class HomeProvider extends ChangeNotifier {
   final GetWeatherUseCase getWeatherUseCase;
+  final WeatherPredictionRemoteDataSource weatherPredictionRemoteDataSource = WeatherPredictionRemoteDataSource();
   Weather? weather;
   List<Forecast> forecast = [];
   bool isLoading = false;
@@ -62,4 +64,27 @@ class HomeProvider extends ChangeNotifier {
 
     notifyListeners();
   }
+  Future<String> getWeatherPrediction() async {
+    if (forecast.isEmpty) {
+      return "No forecast data available.";
+    }
+
+    try {
+      final selectedForecast = forecast[selectedDayIndex];
+
+      List<double> weatherData = [
+        selectedForecast.temperature - 273.15,
+        selectedForecast.humidity.toDouble(),
+        selectedForecast.windSpeed,
+        double.tryParse(selectedForecast.cloudiness) ?? 0.0,
+        selectedForecast.icon.contains("01") ? 1.0 : 0.0,
+      ];
+
+      return await weatherPredictionRemoteDataSource
+          .getWeatherPredict(weatherData);
+    } catch (e) {
+      return "Failed to get prediction: ${e.toString()}";
+    }
+  }
+
 }
