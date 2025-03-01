@@ -9,13 +9,14 @@ The project helps users check the weather conditions of a specific location befo
 - **Authentication**:
   - User registration with Firebase.
   - Secure login and authentication management.
+    
+- **Weather Forecast**:
+  - Displays the current weather of the user's location.
+  -Shows the weather forecast for the next three days.
 
----
-
-## Video Demo
-
-
-Check out the demo video of Prediction feature with AI Model: [Video Link](https://drive.google.com/file/d/1OBA41jqpj97WpOaHc1XB0LustcljrunC/view?usp=drive_link)
+- **Weather Forecast**:
+  - Provides an AI-powered recommendation on whether it is safe to go out based on the weather conditions.
+  -The prediction feature is accessible from the home screen.
 
 ---
 
