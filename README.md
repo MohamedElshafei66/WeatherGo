@@ -12,7 +12,7 @@ The project helps users check the weather conditions of a specific location befo
     
 - **Weather Forecast**:
   - Displays the current weather of the user's location.
-  -Shows the weather forecast for the next three days.
+  - Shows the weather forecast for the next three days.
 
 - **Weather Forecast**:
   - Provides an AI-powered recommendation on whether it is safe to go out based on the weather conditions.
