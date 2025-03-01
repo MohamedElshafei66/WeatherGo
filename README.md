@@ -16,7 +16,6 @@ The project helps users check the weather conditions of a specific location befo
 
 - **Weather Forecast**:
   - Provides an AI-powered recommendation on whether it is safe to go out based on the weather conditions.
-  -The prediction feature is accessible from the home screen.
 
 ---
 
